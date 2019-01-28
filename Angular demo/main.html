@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>The first AngularJS programme </title>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="HelloController">
+        <h2>Hello ！The first {{helloTo.title}} programme example </h2>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.js"></script>
+    <script>
+        angular.module("myapp", [])
+            .controller("HelloController", function ($scope) {
+                $scope.helloTo = {};
+                $scope.helloTo.title = "AngularJS";
+            });
+    </script>
+</body>
+
+</html>
