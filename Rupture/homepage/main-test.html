@@ -6,7 +6,22 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-    
+    <style>
+        .image-div {
+            /* width: 500px;
+            height: 400px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*For obvious effect, you can open the following border to see the effect.*/
+            /* border:1px solid black; */
+        }
+
+        .image-div img {
+            width: 100%;
+            height: auto;
+        }
+    </style>   
 </head>
 
 <body>
@@ -31,7 +46,19 @@
                     <br>
 
                    
+                    <div ng-app="storyApp" ng-controller="storyController">
+                        <div ng-repeat="story in stories" id="{{story.id}}">
+                            <div class="row mt-3">
+                                <p ng-repeat="par in story.para">
+                                    {{ par }}
+                                </p>
+                            </div>
 
+                            <div class="row mt-3 image-div">
+                                <img src="{{ story.gif }}" alt="" width="100%" />
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
